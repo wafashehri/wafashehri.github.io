@@ -1,60 +1,229 @@
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-    height: 100%;
-    color: #777;
-    line-height: 1.8;
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Lato", sans-serif;
 }
+
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+  min-width: 400px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+h3 {}
+
 
 /* Create a Parallax Effect */
+
 .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
 
 /* First image (Logo. Full height) */
+
 .bgimg-1 {
-    background: url('./img/img_header.png');
-    min-height: 400px;
-    /*min-width: 100%;*/
-    background-repeat: no-repeat;
-    /*margin: 0 auto;*/
+  background: url('./img/img_header.png') no-repeat center center fixed;
+  min-height: 50%;
+  background-repeat: no-repeat;
+  /*margin-left: 17%;*/
+  opacity: 0.7;
 }
+
+.about-me {
+  margin-bottom: 4em;
+}
+
+.show-list {
+  display: inline;
+}
+
+.show-list>li {
+  margin-left: 4em;
+  margin-bottom: -0.1em;
+}
+
+.hide-list {
+  display: none;
+}
+
+.logo {
+  background: url("./img/img_header.png") no-repeat center center fixed;
+  min-height: 80%;
+}
+
 
 /* Second image (Portfolio) */
+
 .bgimg-2 {
-    background-image: url("./img/camel_claud.png");
-    min-height: 400px;
-     background-repeat: no-repeat;
+  background-image: url("./img/camel_claud.png");
+  min-height: 400px;
+  background-repeat: no-repeat;
 }
+
 
 /* Third image (Contact) */
+
 .bgimg-3 {
-    background-image: url("./img/img_header.png");
-    min-height: 400px;
-    background-repeat: no-repeat;
+  background-image: url("./img/img_header.png");
+  min-height: 400px;
+  background-repeat: no-repeat;
 }
 
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
+.w3-wide {
+  letter-spacing: 10px;
+}
+
+.w3-hover-opacity {
+  cursor: pointer;
+}
 
 .h-o {
   font-size: 1em;
 }
+
 .h-o:hover {
   background: #0ff;
   font-size: 1.2em;
   border-radius: 2em
 }
 
-.h-o > h2 {
+.h-o>h2 {
   font-size: inherit;
 }
 
+
+/* Cards */
+
+.card {
+  width: 100%;
+  padding-left: 10%;
+  display: inline-block;
+  /* background: gray;    */
+}
+
+.card1 {
+  float: left;
+  width: 50%;
+  /* background: red;      */
+}
+
+.card2 {
+  float: left;
+  /* background: blue;     */
+  margin-left: 8em;
+}
+
+.sm-list {
+  font-size: 1em;
+  font-style: bold;
+}
+
+.sm-list>a {
+  text-decoration: none;
+}
+
+.full-card {
+  clear: both;
+  border-top: 1px solid gray;
+  padding-top: 2em;
+  padding-left: 1.2%;
+}
+
+.my-work {
+  font-size: 2em;
+}
+
+.rec-display {
+  display: block;
+  /* background: blue;
+    height: 50%; */
+}
+
+.drawing {
+  padding-bottom: 2em;
+}
+
+
+/* Gallry  */
+
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  /* display: inline; */
+  width: 30em;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: 15em;
+}
+
+div.gallery img.myBCard {
+  height: 10em;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+
 /* Turn off parallax scrolling for tablets and phones */
+
 @media only screen and (max-device-width: 1024px) {
-    .bgimg-1, .bgimg-2, .bgimg-3 {
-        background-attachment: scroll;
-    }
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    margin-left: 10em;
+  }
+}
+
+@media screen and (max-width: 963px) {
+  div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 25em;
+  }
+  div.gallery img {
+    width: 20em;
+    height: 15em;
+  }
+}
+
+@media screen and (max-width: 811px) {
+  div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 100%;
+  }
+  div.gallery img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .myBCard {
+    width: 350px;
+    height: 200px;
+  }
+
+  .myBCard < .gallery {
+    width: 350px;
+    height: 200px;
+
+  }
 }

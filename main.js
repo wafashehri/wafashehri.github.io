@@ -1,19 +1,19 @@
 (function () {
-  function myMap()
-  {
-    myCenter=new google.maps.LatLng(41.878114, -87.629798);
-    var mapOptions= {
-      center:myCenter,
-      zoom:12, scrollwheel: false, draggable: false,
-      mapTypeId:google.maps.MapTypeId.ROADMAP
-    };
-    var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
-    var marker = new google.maps.Marker({
-      position: myCenter,
-    });
-    marker.setMap(map);
-  }
+  // function myMap()
+  // {
+  //   myCenter=new google.maps.LatLng(41.878114, -87.629798);
+  //   var mapOptions= {
+  //     center:myCenter,
+  //     zoom:12, scrollwheel: false, draggable: false,
+  //     mapTypeId:google.maps.MapTypeId.ROADMAP
+  //   };
+  //   var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+  //
+  //   var marker = new google.maps.Marker({
+  //     position: myCenter,
+  //   });
+  //   marker.setMap(map);
+  // }
 
   // Modal Image Gallery
   function onClick(element) {
@@ -43,4 +43,42 @@
           x.className = x.className.replace(" w3-show", "");
       }
   }
+
+  // Exhibit btn click handlre
+  document.getElementById("show-list-btn").addEventListener("click", function(){
+    var card = document.getElementsByClassName("card1");
+    var div = card[0].childNodes[3].childNodes[3]
+
+    if (hasClass(div, "hide-list")) {
+      removeClass(div, "hide-list");
+      addClass(div, "show-list");
+    } else {
+      removeClass(div, "show-list");
+      addClass(div, "hide-list");
+    }
+  });
+
+  function hasClass(el, className) {
+  if (el.classList)
+    return el.classList.contains(className)
+  else
+    return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'))
+}
+
+function addClass(el, className) {
+  if (el.classList)
+    el.classList.add(className)
+  else if (!hasClass(el, className)) el.className += " " + className
+}
+
+function removeClass(el, className) {
+  if (el.classList)
+    el.classList.remove(className)
+  else if (hasClass(el, className)) {
+    var reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
+    el.className=el.className.replace(reg, ' ')
+  }
+}
+
+
 })();
